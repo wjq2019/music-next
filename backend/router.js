@@ -6,7 +6,7 @@ const axios = require('axios')
 // const pinyin = require('pinyin')
 const Base64 = require('js-base64').Base64
 // 获取签名方法
-// const getSecuritySign = require('./sign')
+const getSecuritySign = require('./sign')
 
 const ERR_OK = 0
 const token = 5381
@@ -100,7 +100,7 @@ function registerRecommend(app) {
     // 随机数值
     const randomVal = getRandomVal('recom')
     // 计算签名值
-    // const sign = getSecuritySign(data)
+    const sign = getSecuritySign(data)
 
     // 发送 get 请求
     get(url, {
